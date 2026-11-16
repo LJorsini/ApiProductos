@@ -1,0 +1,106 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="">
+          <h1 class=" mb-1">Materiales</h1>
+          <p id="mensajeTablaVacia" class="tablaVacia"></p>
+        </div>
+        <div>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalMateriales">
+            Agregar Material
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Tabla -->
+  <div class="card table-responsive">
+    <table class="table mb-0 text-nowrap ">
+      <thead class="table-light border-light">
+        <tr>
+          <th scope="col">Material</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col"></th>
+          
+        </tr>
+      </thead>
+      <tbody id="tbodyMateriales">
+
+      </tbody>
+    </table>
+  </div>
+
+
+
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalMateriales" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="tituloModal">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body p-4">
+                <form id="addProductForm">
+
+                  <input type="" id="localidadId" value="0" />
+
+                  <div class="row">
+                    <div class="col-md-8 mb-3">
+                      <label for="nombreLocalidad" class="form-label">Descriocion</label>
+                      <input type="text" class="form-control mayuscula" id="nombreLocalidad"
+                        placeholder="Ingrese el nombre de la localidad">
+                      <span id="errorNombreLocalidad" class="errorCampoVacio"></span>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                      <label for="cpLocalidad" class="form-label">Codigo postal</label>
+                      <input type="text" class="form-control mayuscula" id="cpLocalidad"
+                        placeholder="Ingrese el codigo postal">
+                      <span id="errorCP" class="errorCampoVacio"></span>
+                    </div>
+                    
+                  </div>
+
+                  
+                  <div class="mb-3">
+                    <label for="selectProvincias" class="form-label">Provincia</label>
+                    <select class="form-select" id="selectProvincias">
+                      <option value="" >-- Seleccione la provincia --</option>
+                    </select>
+                    <span id="errorSeleccionProvincia" class="errorCampoVacio"></span>
+                  </div>
+
+
+
+
+                </form>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal" >Cancelar</button>
+        <button type="button" class="btn btn-primary" onclick="CargarEditarLocalidad()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/localidades.js"></script>
